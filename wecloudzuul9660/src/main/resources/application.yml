@@ -1,0 +1,81 @@
+
+server:
+  port: 9660
+spring:
+  redis:
+    database: 0
+    host: 192.168.7.54
+    port: 6379
+    timeout: 5000
+
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 1
+
+
+  application:
+    name: woniu58-zuul
+  session:
+    store-type: redis
+    timeout: PT30M
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.7.54:9001/eureka/
+  instance:
+    instance-id: consumeHzuul-9660
+    prefer-ip-address: true
+zuul:
+  sensitive-headers: "*"
+  ignored-services:  "*"
+  host:
+    connect-timeout-millis: 5000
+    socket-timeout-millis: 5000
+
+  routes:
+    shiro:
+      service-id: woniu58-shiro
+      path: /abc/**
+    shop:
+      service-id: woniu58-business
+      path: /shop/**
+    admin:
+      service-id: woniu58-admin
+      path: /super/**
+    complaints:
+      service-id: wecloud-complaints
+      path: /complaints/**
+    users:
+      service-id: wecloud-users
+      path: /users/**
+    activity:
+      service-id: WECLOUD-ACTIVITY
+      path: /activity/**
+    interaction:
+      service-id: wecloud-interaction
+      path: /interaction/**
+    product:
+      service-id: wecloud-easyLife
+      path: /easyLife/**
+    publish:
+      service-id: wecloud-publisher8424
+      path: /publish/**
+
+    product2:
+      service-id: merchats-8003
+      path: /merchat/**
+
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+server:
+  port: 9001
+
+eureka:
+  instance:
+    hostname: eurekaserver9001.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #defaultZone: http://eurekaserver9002.com:9002/eureka/,http://eurekaserver9003.com:9003/eureka/
+      defaultZone: http://eurekaserver9001.com:9001/eureka/
+

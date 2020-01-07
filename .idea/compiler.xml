@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wecloudzuul9660" />
+        <module name="wecloudbusiness-9668" />
+        <module name="wecloudeurake-9001" />
+        <module name="wecloud-admin-9669" />
+        <module name="wecloud-common" />
+        <module name="wecloudprovider-9300" />
+        <module name="wecloud-shiro9667" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shirocopy-9700" target="1.8" />
+      <module name="wecloud-shiro-copy9669" target="1.8" />
+      <module name="wecloud-shiro9668" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="shirocopy-9700" options="-parameters" />
+      <module name="wecloud-admin-9669" options="-parameters" />
+      <module name="wecloud-common" options="-parameters" />
+      <module name="wecloud-shiro-copy9669" options="-parameters" />
+      <module name="wecloud-shiro9667" options="-parameters" />
+      <module name="wecloud-shiro9668" options="-parameters" />
+      <module name="wecloudbusiness-9668" options="-parameters" />
+      <module name="wecloudeurake-9001" options="-parameters" />
+      <module name="wecloudprovider-9300" options="-parameters" />
+      <module name="wecloudzuul9660" options="-parameters" />
+    </option>
+  </component>
+</project>

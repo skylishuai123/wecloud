@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style type="text/css">
+    table{
+        border: 1px solid red;
+        width: 200px;
+    }
+</style>
+<body>
+<div id="app">
+    <table>
+        <tr>
+            <td>账号</td>
+            <td>密码</td>
+            <td>邮箱</td>
+            <td>角色</td>
+            <td>权限</td>
+            <td>名字</td>
+            <td>省份证</td>
+            <td>电话</td>
+            <td>操作</td>
+        </tr>
+
+        <tr v-for="user in userall">
+            <td>账号{{user.account}}</td>
+            <td>密码{{user.password}}</td>
+            <td>邮箱{{user.email}}</td>
+            <td>角色{{user.role}}</td>
+            <td>权限{{user.premession}}</td>
+            <td>名字{{user.name}}</td>
+            <td>生分正{{user.idcard}}</td>
+            <td>电话{{user.phone}}</td>
+            <td><a href="">删除</a> <a href="">修改</a></td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript"></script>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script type="text/javascript">
+    const app = new Vue(({
+        el: "#app",
+        data: {
+            userall: []
+        },
+        mounted() {
+            axios
+                .post("/all")
+                .then(res => (this.userall = res.data));
+        }
+    }));
+</script>
+</body>
+</html>
